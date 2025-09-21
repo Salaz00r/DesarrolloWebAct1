@@ -1,7 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0 0 5rem 0;
-    font-family: sans-serif;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
     background-color: rgb(12, 9, 41);
     display: flex;
     align-items: center;
@@ -9,135 +13,225 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-  
-  h1,
-  h2 {
-    color: black;
-    padding: 0rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Arial", cursive;
-    letter-spacing: 1px;
-  }
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-  }
 
-.resultados{
-    color: black;
-    padding: 0rem 0;
+h1, h2, h3 {
+    color: #333;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Arial", cursive;
+    font-family: Arial, sans-serif;
     letter-spacing: 1px;
+    margin: 0 0 1rem 0;
 }
 
-  p{
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #069b62;
+}
+
+p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     letter-spacing: 1.4px;
     word-spacing: 2px;
-    color: #000000;
+    color: #333;
     font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-  }
-
-  label {
-    font-family: arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3.2pt;
-    word-spacing: 3.8pt;
-    color: black;
-  }
-  input[type="date"] {
-    height: 38px;
-    padding: 6px 10px;
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-  }
-
- input[type="submit"] {
-    background-color: #59c4eb;
-    border-radius: 8px;
-    display: inline-block;
-    cursor: pointer;
-    color: black;
-    font-family: Arial;
-    font-size: 20px;
-    padding: 13px 32px;
-    border: none;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    margin: 0 0 1rem 0;
 }
 
-button[type="submit"]:hover {
-    background-color: #005e32;
-}
-
-  input {
-    height: 38px;
-    padding: 6px 10px;
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-  }
-  
-  button{
-      background-color:#069b62;
-      border-radius:8px;
-      display:inline-block;
-      cursor:pointer;
-      color:black;
-      font-family:Arial;
-      font-size:20px;
-      padding:13px 32px;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-  }
-  
-  .dive, .dive2 {
-     width: 800px;
-    border: 5px solid #FFFFFF;
-    border-radius: 10px;
+.container {
+    width: 100%;
+    max-width: 800px;
     background-color: white;
-    margin-top: 2rem;
-    margin-left: 19rem;
-    padding: 2rem;
-    height: auto; /* Permite que crezca según el contenido */
-}
-    
-  #popUpBox{
-    width: 500px;
-    overflow: hidden;
-    background: rgb(255, 243, 243);
-    border-color: black;
-    box-shadow: 0 0 10px black;
+    border: 5px solid #ffffff;
     border-radius: 10px;
-    position: absolute;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+input {
+    height: 40px;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 2px solid #d1d1d1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #069b62;
+    box-shadow: 0 0 0 3px rgba(6, 155, 98, 0.1);
+}
+
+input:invalid {
+    border-color: #e74c3c;
+}
+
+/* Botones */
+.submit-btn, .btn-volver {
+    background-color: #069b62;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 32px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover, .btn-volver:hover {
+    background-color: #005e32;
+    transform: translateY(-2px);
+}
+
+/* Estilos de resultados */
+.resultados-container {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid #069b62;
+}
+
+.resultados-container p {
+    text-align: left;
+    margin: 0.5rem 0;
+    font-size: 16px;
+}
+
+.resultados-container strong {
+    color: #069b62;
+}
+
+/* Modal */
+#popUpOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    display: none;
+}
+
+#popUpBox {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border: 2px solid #069b62;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    padding: 10px;
+    padding: 2rem;
     text-align: center;
     display: none;
-  }
+}
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
- 
+#popUpBox i {
+    color: #069b62;
+    margin-bottom: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn-yes, .btn-no {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-yes {
+    background-color: #069b62;
+    color: white;
+}
+
+.btn-yes:hover {
+    background-color: #005e32;
+}
+
+.btn-no {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-no:hover {
+    background-color: #c0392b;
+}
+
+/* Imagen */
+.resultado-img {
+    display: block;
+    margin: 2rem auto 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+    
+    #popUpBox {
+        width: 95%;
+        padding: 1.5rem;
+    }
 }
