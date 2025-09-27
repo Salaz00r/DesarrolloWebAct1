@@ -1,0 +1,13 @@
+FROM php:8.1-apache
+
+# Copiar archivos al directorio web de Apache
+COPY . /var/www/html/
+
+# Configurar permisos
+RUN chown -R www-data:www-data /var/www/html
+
+# Exponer puerto 80
+EXPOSE 80
+
+# Iniciar Apache
+CMD ["apache2-foreground"]
